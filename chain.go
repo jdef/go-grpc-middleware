@@ -32,7 +32,6 @@ func ChainUnaryServer(interceptors ...grpc.UnaryServerInterceptor) grpc.UnarySer
 				}
 				curI++
 				resp, err := interceptors[curI](currentCtx, currentReq, info, chainHandler)
-				curI--
 				return resp, err
 			}
 
